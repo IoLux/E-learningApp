@@ -15,10 +15,12 @@ const CourseAll = ({ route, navigation }) => {
     });
   });
 
+  const Value = route.params.Value;
+
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Introduction" component={Introduction} />
-      <Stack.Screen name="Profiler" component={CourseProfiler} />
+      <Stack.Screen name="Introduction" component={Introduction} initialParams={{ Title: route.params.Title, Value: Value }} />
+      <Stack.Screen name="Profiler" component={CourseProfiler} initialParams={{ Value: Value }} />
     </Stack.Navigator>
   );
 };

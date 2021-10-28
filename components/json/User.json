@@ -44,8 +44,9 @@
       "user": {
         "name": "Ronaldo",
         "username": "Ronaldo.Effertz",
-        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/samuelkraft/128.jpg",
-        "email": "Ronaldo.Effertz.Deckow@hotmail.com"
+        "avatar": "https://randomuser.me/api/portraits/men/40.jpg",
+        "email": "Ronaldo.Effertz.Deckow@hotmail.com",
+        "bio": "Web & Mobile UI/UX designer, Motion designer following the latest ui & ux trends"
       }
     },
     {
@@ -53,13 +54,15 @@
       "words": "est voluptatum aut",
       "sentence": "Omnis omnis aut dolor quaerat sunt et optio.",
       "sentences": "Nam numquam magni saepe. Deserunt aspernatur dolorem libero soluta sint molestias et sint sed. Maiores id quis assumenda voluptates quos ut saepe officia voluptatem. Ea placeat sed ut. Modi sed earum voluptas cumque unde eum doloribus ipsam.",
+      "image": "https://media.istockphoto.com/photos/varied-food-carbohydrates-protein-vegetables-fruits-dairy-legumes-on-picture-id1218254547?b=1&k=20&m=1218254547&s=170667a&w=0&h=mOEC7x7qU5NC78mCULs-jAPeLkxy8opOvIbGSnwmAyw=",
       "paragraph": "Quam aut reprehenderit asperiores aut. Sunt quis aspernatur incidunt. Illo et perferendis ex incidunt eos ut maxime dolorem voluptatem. Qui rem nihil quos cumque eum doloribus. Quae beatae tempore commodi.",
       "createdDate": "2017-11-20T18:04:58.858Z",
       "user": {
         "name": "Markus",
         "username": "Markus.Price68",
-        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/kikillo/128.jpg",
-        "email": "Markus.Price68.Dicki@yahoo.com"
+        "avatar": "https://robohash.org/auteumvelit.png?size=300x300&set=set1",
+        "email": "Markus.Price68.Dicki@yahoo.com",
+        "bio": "Web & Mobile UI/UX designer, Motion designer following the latest ui & ux trends"
       }
     },
     {
@@ -73,8 +76,9 @@
       "user": {
         "name": "Magali",
         "username": "Magali16",
-        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mastermindesign/128.jpg",
-        "email": "Magali1664@gmail.com"
+        "avatar": "https://robohash.org/itaqueenimsequi.png?size=300x300&set=set1",
+        "email": "Magali1664@gmail.com",
+        "bio": "Web & Mobile UI/UX designer, Motion designer following the latest ui & ux trends"
       }
     }
   ]

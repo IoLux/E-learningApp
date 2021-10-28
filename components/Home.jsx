@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const Home = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home Page" component={HomePages} options={{ headerShown: false }} />
+      <Stack.Screen name="Home Page" component={HomePages} options={{ headerTitle: "Home" }} />
       <Stack.Screen name="More" component={CourseAll} options={({ route }) => ({ title: route.params.title })} />
     </Stack.Navigator>
   );

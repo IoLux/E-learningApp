@@ -3,18 +3,20 @@ import { StyleSheet, Text, View, ScrollView, SafeAreaView, Linking } from "react
 import { Avatar } from "react-native-elements";
 import * as data from "../../json/User.json";
 
-const CourseProfiler = () => {
+const CourseProfiler = ({ route }) => {
+  const Value = route.params.Value;
+
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
       <SafeAreaView style={styles.containerTop}>
         <View>
-          <Avatar size="large" source={{ uri: data.avatar }} rounded />
+          <Avatar size="large" source={{ uri: Value.user.avatar }} rounded />
         </View>
-        <Text>{data.name}</Text>
-        <Text onPress={() => Linking.openURL(data.website)}>{data.website}</Text>
+        <Text>{Value.user.name}</Text>
+        <Text>{Value.user.email}</Text>
       </SafeAreaView>
       <View style={styles.container}>
-        <Text>{data.bio}</Text>
+        <Text>{Value.user.bio}</Text>
       </View>
     </ScrollView>
   );
