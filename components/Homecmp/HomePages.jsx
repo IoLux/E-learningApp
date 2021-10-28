@@ -1,11 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-elements";
+import React, { useLayoutEffect } from "react";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
+import { Button, Card } from "react-native-elements";
 
 const HomePages = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Button title="Next" onPress={() => navigation.navigate("More")} />
+      <Button title="Next" onPress={() => navigation.navigate("More", { Title: "HOOOOOORAY" })} />
     </View>
   );
 };

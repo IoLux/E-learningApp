@@ -20,9 +20,15 @@ const UserProfile = ({ navigation }) => {
           <Text style={{ marginLeft: 12 }}>More</Text>
         </View>
         <View>
-          <ListItem onPress={() => navigation.navigate("Soon")}>Test</ListItem>
-          <ListItem onPress={() => navigation.navigate("Soon")}>Test</ListItem>
-          <ListItem onPress={() => navigation.navigate("Soon")}>Test</ListItem>
+          <ListItem onPress={() => navigation.navigate("Soon")}>
+            <Text>Test</Text>
+          </ListItem>
+          <ListItem onPress={() => navigation.navigate("Soon")}>
+            <Text>Test</Text>
+          </ListItem>
+          <ListItem onPress={() => navigation.navigate("Soon")}>
+            <Text>Test</Text>
+          </ListItem>
         </View>
       </View>
       <View>
@@ -30,7 +36,9 @@ const UserProfile = ({ navigation }) => {
           <Text style={{ marginLeft: 12 }}>More</Text>
         </View>
         <View>
-          <ListItem onPress={() => navigation.navigate("About")}>About</ListItem>
+          <ListItem onPress={() => navigation.navigate("About")}>
+            <Text>About</Text>
+          </ListItem>
         </View>
       </View>
     </ScrollView>
