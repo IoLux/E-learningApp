@@ -14,7 +14,7 @@ const HomePages = ({ navigation }) => {
             <Card.Divider />
             <Card.Image source={{ uri: value.image }} />
             <Text style={{ marginTop: 12, marginBottom: 12 }}>{value.sentences}</Text>
-            <Button title="Next" onPress={() => navigation.navigate("More", { Title: value.words, Value: value })} />
+            <Button title="View Course" onPress={() => navigation.navigate("More", { Title: value.words, Value: value })} />
           </Card>
         );
       })}

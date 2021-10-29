@@ -4,7 +4,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //component
 import HomePages from "./Homecmp/HomePages";
-import TestNest from "./Homecmp/TestNest";
 import CourseAll from "./Homecmp/CourseAll";
 
 const Stack = createStackNavigator();

@@ -1,10 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const TestCourse = () => {
+const TestCourse = ({ route }) => {
+  const value = route.params.value;
+
   return (
-    <View>
-      <Text></Text>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>{value.body}</Text>
     </View>
   );
 };
