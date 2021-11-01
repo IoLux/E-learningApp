@@ -2,20 +2,18 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { StyleSheet, Text, View, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
 import { Card, Button } from "react-native-elements";
 import { useScrollToTop } from "@react-navigation/native";
-
-const wait = (timeout) => {
-  return new Promise((resolve) => setTimeout(resolve, timeout));
-};
+import { useWait } from "../../hooks";
 
 const AllCourses = ({ navigation }) => {
   const [data, setData] = useState([]);
   const [isRefresh, setIsRefresh] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const ref = useRef(null);
+  const awaiting = useWait(2000);
 
   const onRefresh = useCallback(() => {
     setIsRefresh(true);
-    wait(200).then(() => setIsRefreshing(false));
+    awaiting.then(() => setIsRefresh(false));
   });
 
   useScrollToTop(ref);
