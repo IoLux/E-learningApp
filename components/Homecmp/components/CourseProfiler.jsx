@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView, SafeAreaView, Linking } from "react-native";
 import { Avatar } from "react-native-elements";
-import * as data from "../../json/User.json";
 
 const CourseProfiler = ({ route }) => {
   const Value = route.params.Value;

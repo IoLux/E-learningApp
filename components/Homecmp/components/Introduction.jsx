@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { Image } from "react-native-elements";
+import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from "react-native";
+import { Image, Input } from "react-native-elements";
 
 const Introduction = ({ route, navigation }) => {
   const Value = route.params.Value;
@@ -11,7 +11,7 @@ const Introduction = ({ route, navigation }) => {
         <Text style={{ fontSize: 20 }}>{Value.words}</Text>
       </View>
       <View style={styles.container}>
-        <Image source={{ uri: Value.image }} style={{ width: 250, height: 250 }} />
+        <Image source={{ uri: Value.image }} style={{ width: 250, height: 250 }} PlaceholderContent={<ActivityIndicator />} />
       </View>
       <View style={styles.content}>
         <Text>{Value.paragraph}</Text>

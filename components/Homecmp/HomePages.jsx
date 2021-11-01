@@ -1,24 +1,43 @@
-import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from "react-native";
 import { Button, Card } from "react-native-elements";
 
-import * as data from "../json/User.json";
-
 const HomePages = ({ navigation }) => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("https://e-learningfakeapi.herokuapp.com/postUser");
+      const datas = await res.json();
+
+      setData(datas.data);
+      setIsLoading(false);
+    };
+
+    getData();
+  });
+
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      {data.posts.map((value, index) => {
-        return (
-          <Card key={index}>
-            <Card.Title>{value.words}</Card.Title>
-            <Card.Divider />
-            <Card.Image source={{ uri: value.image }} />
-            <Text style={{ marginTop: 12, marginBottom: 12 }}>{value.sentences}</Text>
-            <Button title="View Course" onPress={() => navigation.navigate("More", { Title: value.words, Value: value })} />
-          </Card>
-        );
-      })}
-    </ScrollView>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      {isLoading ? (
+        <ActivityIndicator size="large" style={{ justifyContent: "center", alignItems: "center", padding: 24 }} />
+      ) : (
+        <ScrollView style={{ backgroundColor: "white" }}>
+          {data.map((value, index) => {
+            return (
+              <Card key={index}>
+                <Card.Title>{value.words}</Card.Title>
+                <Card.Divider />
+                <Card.Image source={{ uri: value.image }} />
+                <Text style={{ marginTop: 12, marginBottom: 12 }}>{value.sentences}</Text>
+                <Button title="View Course" onPress={() => navigation.navigate("More", { Title: value.words, Value: value })} />
+              </Card>
+            );
+          })}
+        </ScrollView>
+      )}
+    </View>
   );
 };
 

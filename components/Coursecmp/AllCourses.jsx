@@ -1,14 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from "react-native";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { StyleSheet, Text, View, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
 import { Card, Button } from "react-native-elements";
+import { useScrollToTop } from "@react-navigation/native";
+
+const wait = (timeout) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
 
 const AllCourses = ({ navigation }) => {
   const [data, setData] = useState([]);
+  const [isRefresh, setIsRefresh] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const ref = useRef(null);
+
+  const onRefresh = useCallback(() => {
+    setIsRefresh(true);
+    wait(200).then(() => setIsRefreshing(false));
+  });
+
+  useScrollToTop(ref);
 
   useEffect(() => {
     getAllData();
-    setIsLoading(false);
   }, []);
 
   const getAllData = async () => {
@@ -16,16 +29,15 @@ const AllCourses = ({ navigation }) => {
     const data = await res.json();
 
     setData(data);
+    setIsLoading(false);
   };
 
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
+    <View style={{ flex: 1, backgroundColor: "white" }} ref={ref}>
       {isLoading ? (
-        <View style={styles.loading}>
-          <ActivityIndicator size="large" color="#0000ff" />
-        </View>
+        <ActivityIndicator size="large" color="#0000ff" style={{ justifyContent: "center", alignItems: "center", padding: 24, marginTop: 24 }} />
       ) : (
-        <View>
+        <ScrollView style={{ backgroundColor: "white" }} refreshControl={<RefreshControl refreshing={isRefresh} onRefresh={onRefresh} />} ref={ref}>
           {data.map((value, index) => {
             return (
               <Card key={index}>
@@ -37,9 +49,9 @@ const AllCourses = ({ navigation }) => {
               </Card>
             );
           })}
-        </View>
+        </ScrollView>
       )}
-    </ScrollView>
+    </View>
   );
 };
 
